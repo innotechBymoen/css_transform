@@ -1,0 +1,234 @@
+/* 
+    Woah cool! If you go to https://fonts.google.com 
+    You can get all kinds of different fots for your site.
+    Just pick one, select a style and copy the code they give to you.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@100&display=swap');
+/* 
+    Note that almost all of the CSS in this document is standard grid / layout
+    CSS. The big takeaway here is to get everything laid out using grid,
+    give simple spacing using margin and padding,
+    finally use transform to move things around without impacting other tags.
+*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gantari', sans-serif;
+    font-weight: lighter;
+}
+
+img, svg, iframe {
+    width: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: #E5E5E5;
+}
+
+#page_header {
+    min-height: 10vh;
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+    background-color: rgb(221, 221, 221);
+    width: 100%;
+}
+
+#page_header img {
+    height: 50px;
+}
+
+#page_content {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#hero {
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    justify-items: center;
+    align-items: end;
+    background-image: url(images/hero.jpeg);
+    background-size: cover;
+    grid-auto-flow: column;
+}
+
+#hero_ad {
+    color: white;
+    background-color: rgb(46, 46, 46);
+    display: grid;
+    row-gap: 20px;
+    padding: 30px;
+    font-size: 2.5rem;
+    z-index: 10;
+    width: 450px;
+    transition: all 1s ease-in-out;
+
+    /* Look at that!  It moved the ad up 
+        without having to rely on things like margin or padding. 
+        This is super handy if you want to move one thing, 
+        but not impact other items on the page.
+    */
+    transform: translateY(-125px);
+}
+
+#hero_ad:hover {
+    /* 
+        You can also do really annoying animations on hover with transform.
+        Here I keep the ad in the same spot as above, but rotate it once all the way around
+    */
+    transform: translateY(-125px) rotate(360deg);
+}
+
+#hero_color {
+    width: 70%;
+    height: 90%;
+    background-color: #F64925;
+    justify-self: start;
+    
+    /* 
+        Here we see that we can impact more than just one transform.
+        You can also do things like scaleX, scaleY, rotations, and more.
+        Check out https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+        For more examples of things to transform.
+    */
+    transform: translateX(-150%) translateY(55%);
+}
+
+#mission_container {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+    max-width: 1020px;
+    z-index: 3;
+    background-color: white;
+    padding: 30px;
+    transform: translateY(-50px);
+    font-size: 1.2em;
+}
+
+.mission {
+    min-height: 200px;
+}
+
+.mission h1 {
+    padding: 10px 0px;
+}
+.mission div {
+    width: 70%;
+    background-color: #F64925;
+    height: 2px;
+    margin-bottom: 20px;
+}
+.mission p {
+    font-size: 0.9em;
+    color: gray;
+    font-style: italic;
+    line-height: 200%;
+}
+
+#page_footer {
+    display: grid;
+    place-items: center;
+}
+
+#contact_form {
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    max-width: 1020px;
+    width: 100%;
+    min-height: 500px;
+    background-color: white;
+    transform: translateY(85px);
+}
+
+#contact_form article {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    row-gap: 30px;
+}
+
+#hour_info p {
+    color: gray;
+    font-style: italic;
+    margin: 10px 0px;
+}
+#hour_info a {
+    color: #F64925;;
+    font-weight: bold;
+}
+
+#message_form {
+    display: grid;
+    place-items: center;
+    padding: 50px;
+    row-gap: 30px;
+    width: 90%;
+}
+
+#message_form input, #message_form textarea {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+input[type='text']:active, textarea:active {
+    border: none;
+    outline: none;
+}
+
+#message_form textarea {
+    min-height: 100px;
+}
+
+#message_form input[type='submit'] {
+    border: none;
+    background-color: #F64925;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+    width: 75%;
+}
+
+#message_form input[type='submit']:hover {
+    cursor: pointer;
+}
+
+#footer_content {
+    width: 100%;
+    background-color: rgb(46, 46, 46);
+    display: grid;
+    place-items: center;
+}
+
+#footer_content img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#footer_content p {
+    color: white;
+    padding: 50px 10px;
+    text-align: center;
+}
+
+.subheader {
+    color: gray;
+    justify-self: start;
+    font-size: 1.1em;
+}
+
+.header {
+    font-size: 2em;
+    font-weight: bold;
+}
